@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'index/default'
+  root 'index#default'
 
   get 'index/check'
 
