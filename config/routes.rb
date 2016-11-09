@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'index/default'
+
+  get 'index/check'
+
+  get 'index/show'
+
   resources :snips
   resources :sites
   resources :tasks
