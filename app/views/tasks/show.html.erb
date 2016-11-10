@@ -1,39 +1,53 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+	<ul class="list-inline pull-right">
+		<li><%= link_to 'Edit', edit_task_path(@task), :class=>"btn btn-warning" %></li>
+		<li><%= link_to 'Back', tasks_path, :class=>"btn btn-default" %></li>
+	</ul>
+  <h3><%= @task.title %></h3>
+</div>
 
-<p>
-  <strong>Context:</strong>
-  <%= @task.context %>
-</p>
+<% if notice %>
+	<div class="alert alert-info">
+		<p id="notice"><%= notice %></p>
+	</div>
+<% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
+<table class="table table-bordered">
+<tr>
+  <td><strong>Context</strong></td>
+  <td><%=  @task.context %></td>
+</tr>
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
+<tr>
+  <td><strong>Title</strong></td>
+  <td><%=  @task.title %></td>
+</tr>
+<tr>
+  <td><strong>Description</strong></td>
+  <td><%=  @task.description %></td>
+</tr>
+<tr>
+  <td><strong>Tags</strong></td>
+  <td><%=  @task.tags %></td>
+</tr>
+<tr>
+  <td><strong>Data</strong></td>
+  <td><%=  @task.data %></td>
+</tr>
+<tr>
+  <td><strong>Complete ts</strong></td>
+  <td><%=  @task.complete_ts %></td>
+</tr>
+<tr>
+  <td><strong>Active ts</strong></td>
+  <td><%=  @task.active_ts %></td>
+</tr>
+<tr>
+  <td><strong>Data</strong></td>
+  <td><%=  @task.data %></td>
+</tr>
 
-<p>
-  <strong>Tags:</strong>
-  <%= @task.tags %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @task.data %>
-</p>
-
-<p>
-  <strong>Complete ts:</strong>
-  <%= @task.complete_ts %>
-</p>
-
-<p>
-  <strong>Active ts:</strong>
-  <%= @task.active_ts %>
-</p>
+</table>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
