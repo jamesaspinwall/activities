@@ -1,52 +1,53 @@
 <%= form_for(task) do |f| %>
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+    <% if task.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-      <ul>
-      <% task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% task.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :context, for: 'contextField' %>
+      <%= f.text_field :context, class: 'form-control', id: 'contextField' %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :context %>
-    <%= f.text_field :context %>
-  </div>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+    <div class="form-group">
+      <%= f.label :tags %>
+      <%= f.text_field :tags, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :tags %>
-    <%= f.text_field :tags %>
-  </div>
+    <div class="form-group">
+      <%= f.label :data %>
+      <%= f.text_area :data, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :data %>
-    <%= f.text_area :data %>
-  </div>
+    <div class="form-group">
+      <%= f.label :complete_ts %>
+      <%= f.number_field :complete_ts, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :complete_ts %>
-    <%= f.number_field :complete_ts %>
-  </div>
+    <div class="form-group">
+      <%= f.label :active_ts %>
+      <%= f.number_field :active_ts, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :active_ts %>
-    <%= f.number_field :active_ts %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <ul class="list-inline">
+      <li><%= f.submit 'Create', class: "btn btn-success" %></li>
+      <li><%= button_tag "Reset", type: :reset, class: "btn btn-default" %></li>
+    </ul>
 <% end %>
