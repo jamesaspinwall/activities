@@ -1,18 +1,18 @@
+<% if notice %>
+    <div class="alert alert-info">
+      <p id="notice"><%= notice %></p>
+    </div>
+<% end %>
+
 <div class="page-header">
 	<ul class="list-inline pull-right">
 		<li><%= link_to 'Edit', edit_task_path(@task), :class=>"btn btn-warning" %></li>
 		<li><%= link_to 'Back', tasks_path, :class=>"btn btn-default" %></li>
 	</ul>
-  <h3><%= @task.title %></h3>
+  <h4><%= @task.title %></h4>
 </div>
 
-<% if notice %>
-	<div class="alert alert-info">
-		<p id="notice"><%= notice %></p>
-	</div>
-<% end %>
-
-<table class="table table-bordered">
+<table class="table">
 <tr>
   <td><strong>Context</strong></td>
   <td><%=  @task.context %></td>
@@ -48,6 +48,3 @@
 </tr>
 
 </table>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
