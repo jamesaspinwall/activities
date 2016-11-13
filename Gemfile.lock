@@ -39,8 +39,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    bootscaf (0.1.26)
-      thor
     builder (3.2.2)
     byebug (9.0.6)
     coderay (1.1.1)
@@ -164,7 +162,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootscaf
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
