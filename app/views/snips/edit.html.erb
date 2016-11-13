@@ -1,6 +1,18 @@
-<h1>Editing Snip</h1>
+<div class="page-header">
+  <ul class="list-inline pull-right">
+    <li><%= link_to 'Show Task', @snip, :class=>"btn btn-success" %></li>
+    <li><%= link_to 'Cancel', snips_path, :class=>"btn btn-default" %></li>
+  </ul>
+  <h4>Edit Snip</h4>
+</div>
 
-<%= render 'form', snip: @snip %>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <%= render 'form', snip: @snip %>
+  </div>
+</div>
 
-<%= link_to 'Show', @snip %> |
-<%= link_to 'Back', snips_path %>
+
+
+
+

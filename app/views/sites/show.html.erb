@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @site.content %>
-</p>
+<% if notice %>
+    <div class="alert alert-info">
+      <p id="notice"><%= notice %></p>
+    </div>
+<% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @site.title %>
-</p>
+<div class="page-header">
+  <ul class="list-inline pull-right">
+    <li><%= link_to 'Edit', edit_site_path(@site), :class=>"btn btn-warning" %></li>
+    <li><%= link_to 'Back', sites_path, :class=>"btn btn-default" %></li>
+  </ul>
+  <h4><%= @site.title %></h4>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @site.description %>
-</p>
+<table class="table">
+  <tr>
+    <td><strong>Content</strong></td>
+    <td><%=   @site.content %></td>
+  </tr>
 
-<p>
-  <strong>Url:</strong>
-  <%= @site.url %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @site.data %>
-</p>
-
-<%= link_to 'Edit', edit_site_path(@site) %> |
-<%= link_to 'Back', sites_path %>
+  <tr>
+    <td><strong>Title</strong></td>
+    <td><%=   @site.title %></td>
+  </tr>
+  <tr>
+    <td><strong>Description</strong></td>
+    <td><%=   @site.description %></td>
+  </tr>
+  <tr>
+    <td><strong>Url</strong></td>
+    <td><%=   @site.url %></td>
+  </tr>
+  <tr>
+    <td><strong>Data</strong></td>
+    <td><%=   @site.data %></td>
+  </tr>

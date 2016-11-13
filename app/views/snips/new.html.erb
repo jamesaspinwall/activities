@@ -1,5 +1,10 @@
-<h1>New Snip</h1>
+<div class="page-header">
+  <%= link_to 'Cancel', snips_path, :class => "btn btn-default pull-right" %>
+  <h2>New Snip</h2>
+</div>
 
-<%= render 'form', snip: @snip %>
-
-<%= link_to 'Back', snips_path %>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <%= render 'form', snip: @snip %>
+  </div>
+</div>

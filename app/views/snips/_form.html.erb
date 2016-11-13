@@ -1,42 +1,43 @@
 <%= form_for(snip) do |f| %>
-  <% if snip.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(snip.errors.count, "error") %> prohibited this snip from being saved:</h2>
+    <% if snip.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(snip.errors.count, "error") %> prohibited this snip from being saved:</h2>
 
-      <ul>
-      <% snip.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% snip.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :context %>
+      <%= f.text_field :context, class: 'form-control' %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :context %>
-    <%= f.text_field :context %>
-  </div>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+    <div class="form-group">
+      <%= f.label :code %>
+      <%= f.text_area :code, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :code %>
-    <%= f.text_area :code %>
-  </div>
+    <div class="form-group">
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
+    <div class="form-group">
+      <%= f.label :data %>
+      <%= f.text_area :data, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :data %>
-    <%= f.text_area :data %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <ul class="list-inline">
+      <li><%= f.submit 'Submit', class: "btn btn-success" %></li>
+      <li><%= button_tag "Reset", type: :reset, class: "btn btn-default" %></li>
+    </ul>
 <% end %>

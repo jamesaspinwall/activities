@@ -1,6 +1,19 @@
-<h1>Editing Site</h1>
 
-<%= render 'form', site: @site %>
+<div class="page-header">
+  <ul class="list-inline pull-right">
+    <li><%= link_to 'Show Task', @site, :class=>"btn btn-success" %></li>
+    <li><%= link_to 'Cancel', sites_path, :class=>"btn btn-default" %></li>
+  </ul>
+  <h4>Edit Site</h4>
+</div>
 
-<%= link_to 'Show', @site %> |
-<%= link_to 'Back', sites_path %>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <%= render 'form', site: @site %>
+  </div>
+</div>
+
+
+
+
+
