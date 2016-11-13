@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109193202) do
+ActiveRecord::Schema.define(version: 20161111185645) do
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sites", force: :cascade do |t|
     t.string   "content"
@@ -20,6 +26,12 @@ ActiveRecord::Schema.define(version: 20161109193202) do
     t.text     "data"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "snips", force: :cascade do |t|
@@ -42,6 +54,20 @@ ActiveRecord::Schema.define(version: 20161109193202) do
     t.integer  "active_ts"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "upworks", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "country_id"
+    t.integer  "skill_id"
+    t.float    "rate"
+    t.integer  "hours"
+    t.integer  "jobs"
+    t.boolean  "top"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_upworks_on_country_id"
+    t.index ["skill_id"], name: "index_upworks_on_skill_id"
   end
 
 end
