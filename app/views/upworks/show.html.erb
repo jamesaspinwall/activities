@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @upwork.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @upwork.country %>
+</p>
+
+<p>
+  <strong>Skill:</strong>
+  <%= @upwork.skill %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @upwork.rate %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @upwork.hours %>
+</p>
+
+<p>
+  <strong>Jobs:</strong>
+  <%= @upwork.jobs %>
+</p>
+
+<p>
+  <strong>Top:</strong>
+  <%= @upwork.top %>
+</p>
+
+<%= link_to 'Edit', edit_upwork_path(@upwork) %> |
+<%= link_to 'Back', upworks_path %>

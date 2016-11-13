@@ -1,0 +1,52 @@
+<%= form_for(upwork) do |f| %>
+  <% if upwork.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(upwork.errors.count, "error") %> prohibited this upwork from being saved:</h2>
+
+      <ul>
+      <% upwork.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country_id %>
+    <%= f.text_field :country_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_id %>
+    <%= f.text_field :skill_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rate %>
+    <%= f.text_field :rate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hours %>
+    <%= f.number_field :hours %>
+  </div>
+
+  <div class="field">
+    <%= f.label :jobs %>
+    <%= f.number_field :jobs %>
+  </div>
+
+  <div class="field">
+    <%= f.label :top %>
+    <%= f.check_box :top %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

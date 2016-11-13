@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  country: one
+  skill: one
+  rate: 1.5
+  hours: 1
+  jobs: 1
+  top: false
+
+two:
+  name: MyString
+  country: two
+  skill: two
+  rate: 1.5
+  hours: 1
+  jobs: 1
+  top: false
