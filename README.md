@@ -5,6 +5,7 @@
 rails g scaffold task context:string title:string description:text tags:string data:text complete_ts:integer active_ts:integer
 rails g scaffold site content:string title:string description:text url:string data:text
 rails g scaffold snip context:string title:string code:text url:string data:text;rake db:migrate
+rails g scaffold upwork name:string country:references skill:references rate:float hours:integer jobs:integer top:boolean
 rails g controller index default check show
 
 Site
